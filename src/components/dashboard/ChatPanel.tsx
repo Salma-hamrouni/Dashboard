@@ -17,7 +17,7 @@ const SUGGESTIONS = [
   'Analytics marketing',
 ];
 
-const ChatPanel = ({ onAddWidget, onAddWidgets }: ChatPanelProps) => {
+const ChatPanel = ({onAddWidgets }: ChatPanelProps) => {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: '1',

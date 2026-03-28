@@ -4,18 +4,9 @@ import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import ChartWidget from './ChartWidget';
 import { useIsMobile } from '../../hooks/use-mobile';
-import type { DashboardWidget, ChartType } from '../../types/dashboard';
-import { SAMPLE_DATA, CHART_COLORS } from '../../types/dashboard';
+import type { DashboardWidget,} from '../../types/dashboard';
 
 const ResponsiveGridLayout = WidthProvider(Responsive) as React.ComponentType<any>;
-
-
-const TITLE_MAP: Record<string, string> = {
-  revenue: 'Revenus mensuels',
-  users: 'Croissance utilisateurs',
-  categories: 'Répartition par plateforme',
-  performance: 'Score de performance',
-};
 
 interface DashboardCanvasProps {
   widgets: DashboardWidget[];
