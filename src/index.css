@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 92%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 92%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 92%;
+
+    --primary: 187 72% 52%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 222 30% 14%;
+    --secondary-foreground: 210 40% 80%;
+
+    --muted: 222 30% 12%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 187 72% 52%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 16%;
+    --input: 222 30% 16%;
+    --ring: 187 72% 52%;
+
+    --radius: 0.5rem;
+
+    --chart-1: 187 72% 52%;
+    --chart-2: 262 72% 62%;
+    --chart-3: 142 60% 50%;
+    --chart-4: 38 92% 60%;
+    --chart-5: 350 72% 60%;
+
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 210 40% 80%;
+    --sidebar-primary: 187 72% 52%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 14%;
+    --sidebar-accent-foreground: 210 40% 92%;
+    --sidebar-border: 222 30% 16%;
+    --sidebar-ring: 187 72% 52%;
+
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+  }
+}
+
+/* React Grid Layout styles */
+.react-grid-layout {
+  position: relative;
+  transition: height 200ms ease;
+}
+
+.react-grid-item {
+  transition: all 200ms ease;
+  transition-property: left, top, width, height;
+}
+
+.react-grid-item.cssTransforms {
+  transition-property: transform, width, height;
+}
+
+.react-grid-item.resizing {
+  opacity: 0.9;
+  z-index: 3;
+}
+
+.react-grid-item.react-draggable-dragging {
+  transition: none;
+  z-index: 3;
+  will-change: transform;
+  box-shadow: 0 25px 50px -12px hsl(187 72% 52% / 0.15);
+}
+
+.react-grid-item > .react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+}
+
+.react-grid-item > .react-resizable-handle::after {
+  content: '';
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid hsl(187 72% 52% / 0.4);
+  border-bottom: 2px solid hsl(187 72% 52% / 0.4);
+  border-radius: 0 0 2px 0;
+}
+
+.react-grid-placeholder {
+  background: hsl(187 72% 52% / 0.1);
+  border: 2px dashed hsl(187 72% 52% / 0.3);
+  border-radius: var(--radius);
+  opacity: 1;
+  transition: all 150ms ease;
+}
+
+/* Mobile grid improvements */
+@media (max-width: 480px) {
+  .react-grid-item {
+    min-height: 180px !important;
+  }
+  
+  .react-resizable-handle {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  
+  .react-resizable-handle::after {
+    right: 8px !important;
+    bottom: 8px !important;
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(222 30% 20%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(222 30% 28%);
+}
